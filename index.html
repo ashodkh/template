@@ -87,8 +87,8 @@
 								Currently I am working on:
 								<ul>
 									<li align="left">predicting the emission lines of galaxies from their stellar continua
-										with a JAX-implemented Multi-Layer Perceptron trained on data from DESI; </li>
-									<li align="left">and using deep neural networks to compress images of galaxy into a low-dimensional space and perform downstream tasks on this space,
+										with a JAX-implemented Multi-Layer Perceptron trained on DESI data; </li>
+									<li align="left">and using deep neural networks to compress images of galaxies into a low-dimensional space and perform downstream tasks on this space,
 													 such as photo-z prediction, outlier detection, and classification.</li>
 								</ul>
 							</p>
@@ -160,13 +160,13 @@
 								Most of the light from galaxies comes from stars, which produce a smooth spectrum,
 								and from gas, which emit a lot of light at specific wavelengths, called emission lines.
 								This project shows that these two sources are strongly correlated. 
-								This is not surprising - the light from stars ionizes the gas, and that is what mainly produces the emission lines. 
+								This is not surprising - emission lines are produced when the gas is ionized by the light emitted from the stars. 
 								Also, the starlight holds information on the history of star formation of the galaxy, which is what determines 
 								the content of the gas. <br>
 
 								<a href="#" class="image featured"><img src="images/dash_spectra_screenshot.png" alt="" /></a>
-								The top-left panel in the figure shows a 2D projection of the starlight (with UMAP), and the points (1,000 galaxies)
-								are color-coded with the strength of the strongest emission line, H-alpha. There is a clear trend from weak to strong H-alpha emission.
+								The top-left panel in the figure shows a 2D projection of the starlight (using UMAP), with 1,000 galaxies being represented as scatter points
+								color-coded with the strength of the strongest emission line, H-alpha. There is a clear trend from weak to strong H-alpha emission.
 								The galaxies with strong H-alpha emission are the ones with the youngest stars (which have blue continua),
 								and the galaxies with weak H-alpha emission are the ones with the oldest stars (which have red continua).
 								The top-right panel shows the spectrum of a particular galaxy, and the bottom four panels show some of its emission lines.
@@ -195,13 +195,13 @@
 							</header>
 
 							<p>
-								This project aims to improve distance (redshift) estimates of far-away galaxies (up to redshift~2)
+								This project aims to improve distance (redshift) estimates of far-away galaxies (up to redshift ~ 2)
 								by leveraging pixel-level information from space-based images. For nearby galaxies, it has been shown that 
 								the shape of the galaxy can improve distance estimates. This should also be true for galaxies that are further away,
 								but high-resolution images from space telescopes are required.
 								<br>
 
-								To do so, we have used contrastive learning (a machine learning method that uses deep neural networks) on Hubble Space Telescope (HST) images
+								To test this, we have used contrastive learning (a machine learning method that uses deep neural networks) on Hubble Space Telescope (HST) images
 								in the <a href="https://www.ipac.caltech.edu/project/candels" style="color: green;" target="_blank">CANDELS fields</a>
 								to compress them into a low-dimensional space. In this space, galaxies which have similar shapes (up to rotation) and colors will 
 								be close to each other.
@@ -212,7 +212,7 @@
 								The neighbors have similar shapes to the original galaxy, and also have similar relative fluxes in the different filters.
 								<br>
 
-								Next, we trained a different neural network to predict distances from this low-dimensional space.
+								After obtaining a low-dimensional representation, we trained a different neural network to predict distances from it.
 								We saw minor improvements in performance, but we think we can do better by using transfer learning (with ground-based images) and 
 								a more sophisticated neural network architecture, so stay tuned!
 
@@ -230,9 +230,6 @@
 							<header>
 								<h2>About Me</h2>
 							</header>
-
-							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-
 							<p>
 								I am Lebanese-Armenian born and raised in the beautiful country of Lebanon.
 								I enjoy rock climbing, playing football (soccer), and photography.
