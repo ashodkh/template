@@ -33,8 +33,8 @@
 							<ul>
 								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
 								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Research</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-th">Emission Lines</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-th">Deep Learning Photo-z's</span></a></li>
+								<li><a href="#emission_lines" id="about-link"><span class="icon solid fa-th">Emission Lines</span></a></li>
+								<li><a href="#photo_zs" id="about-link"><span class="icon solid fa-th">Deep Learning Photo-zs</span></a></li>
 								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
 								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
 							</ul>
@@ -78,14 +78,16 @@
 								<h2>Research</h2>
 							</header>
 							<p align="left">
-								I am broadly interested in how machine learning algorithms can improve our understanding of The Universe.
+								I am interested in applying machine learning (neural networks, CNNs, contrastive learning, normalizing flows, transfer learning)
+								to large astronomical datasets.
 								A key ingredient to studying cosmology and galaxy evolution is knowing distances to galaxies, which is the primary focus of my research.
-								I am part of the <a href="https://www.desi.lbl.gov/" target="_blank">Dark Energy Spectroscopic Instrument (DESI) Collaboration</a>,
-								and the <a href="https://lsstdesc.org/" target="_blank">Legacy Survey of Space and Time Dark Energy Science Collaboration (LSST DESC).</a> <br>
+								I am part of the <a href="https://www.desi.lbl.gov/" target="_blank" style="color: green;">Dark Energy Spectroscopic Instrument (DESI) Collaboration</a>,
+								and the <a href="https://lsstdesc.org/" target="_blank" style="color: green;">Legacy Survey of Space and Time Dark Energy Science Collaboration (LSST DESC).</a> <br>
 								<br>
 								Currently I am working on:
 								<ul>
-									<li align="left">empirically mapping stellar continua to emission lines with a JAX-implemented Multi-Layer Perceptron trained on data from DESI; </li>
+									<li align="left">predicting the emission lines of galaxies from their stellar continua
+										with a JAX-implemented Multi-Layer Perceptron trained on data from DESI; </li>
 									<li align="left">and using deep neural networks to compress images of galaxy into a low-dimensional space and perform downstream tasks on this space,
 													 such as photo-z prediction, outlier detection, and classification.</li>
 								</ul>
@@ -140,18 +142,18 @@
 					</section>
 
 					<!-- Emission Lines -->
-					<section id="about" class="three">
+					<section id="emission_lines" class="three">
 						<div class="container">
 
 							<header>
-								<h2>Mapping Emission Lines to Continua <br>
-									<a href="https://academic.oup.com/mnras/article/531/1/1454/7665770" style="color: blue;" target="_blank">Published in MNRAS</a>
+								<h2> Mapping Emission Lines to Continua <br>
+									<a href="https://academic.oup.com/mnras/article/531/1/1454/7665770" style="color: green;" target="_blank">Published in MNRAS</a>
 								</h2>
 							</header>
 
 							<p>
 								In this project, we trained a JAX-implemented neural network on 
-								<a href="https://www.desi.lbl.gov/2023/06/13/the-desi-early-data-release-in-now-available/" style="color: blue;" 
+								<a href="https://www.desi.lbl.gov/2023/06/13/the-desi-early-data-release-in-now-available/" style="color: green;" 
 								target="_blank">DESI early data release</a> to predict the strengths of emission lines of galaxies from their stellar continua. 
 								<br>
 
@@ -171,7 +173,7 @@
 								This galaxy has a blue spectrum (the flux is strongest at shorter wavelengths), and it also has strong emission lines.
 								<br>
 								You can checkout an interactive version of this plot at <a href="https://dash-with-umap.onrender.com"
-								style="color: blue;" target="_blank">this link</a> (it might take some time to load).
+								style="color: green;" target="_blank">this link</a> (it might take some time to load).
 								By hovering over the points in the scatter plot of the top-left panel, you will find that galaxies
 								with a red spectrum (more flux at longer wavelengths) will have weak emission lines.
 
@@ -181,14 +183,42 @@
 					</section>
 
 					<!-- Emission Lines -->
-					<section id="about" class="three">
+					<section id="photo_zs" class="three">
 						<div class="container">
 
 							<header>
-								<h2>Deep Learning Photometric Redshifts with Space-based Images</h2>
+								<h2>
+									Deep Learning Photometric Redshifts with Space-based Images <br>
+									<a href="https://youtu.be/uxc27HPdLaM?t=00" style="color: green;" target="_blank">
+										Talk at AstroAI 2024</a>
+								</h2>
 							</header>
 
-							<p>More details soon!</p>
+							<p>
+								This project aims to improve distance (redshift) estimates of far-away galaxies (up to redshift~2)
+								by leveraging pixel-level information from space-based images. For nearby galaxies, it has been shown that 
+								the shape of the galaxy can improve distance estimates. This should also be true for galaxies that are further away,
+								but high-resolution images from space telescopes are required.
+								<br>
+
+								To do so, we have used contrastive learning (a machine learning method that uses deep neural networks) on Hubble Space Telescope (HST) images
+								in the <a href="https://www.ipac.caltech.edu/project/candels" style="color: green;" target="_blank">CANDELS fields</a>
+								to compress them into a low-dimensional space. In this space, galaxies which have similar shapes (up to rotation) and colors will 
+								be close to each other.
+
+								<a href="#" class="image featured"><img src="images/candels_near_neighbors_example.png" alt="" /></a>
+								In the figure above, we show as an example 1 galaxy (left column) and its 5 nearest neighbors
+								(columns 2-6) in the low-dimensional space. The rows correspond to different HST imaging filters (wavelengths).
+								The neighbors have similar shapes to the original galaxy, and also have similar relative fluxes in the different filters.
+								<br>
+
+								Next, we trained a different neural network to predict distances from this low-dimensional space.
+								We saw minor improvements in performance, but we think we can do better by using transfer learning (with ground-based images) and 
+								a more sophisticated neural network architecture, so stay tuned!
+
+
+
+							</p>
 
 						</div>
 					</section>
@@ -203,9 +233,11 @@
 
 							<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
 
-							<p>I am Lebanese-Armenian born and raised in the beautiful country of Lebanon.
+							<p>
+								I am Lebanese-Armenian born and raised in the beautiful country of Lebanon.
 								I enjoy rock climbing, playing football (soccer), and photography.
-								I love exploring new places.</p>
+								I love exploring new places.
+							</p>
 
 						</div>
 					</section>
