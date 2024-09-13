@@ -151,10 +151,11 @@
 								</h2>
 							</header>
 
-							<p>
+							<p align="left"> 
 								In this project, we trained a JAX-implemented neural network on 
 								<a href="https://www.desi.lbl.gov/2023/06/13/the-desi-early-data-release-in-now-available/" style="color: green;" 
 								target="_blank">DESI early data release</a> to predict the strengths of emission lines of galaxies from their stellar continua. 
+								<br>
 								<br>
 
 								Most of the light from galaxies comes from stars, which produce a smooth spectrum,
@@ -162,7 +163,9 @@
 								This project shows that these two sources are strongly correlated. 
 								This is not surprising - emission lines are produced when the gas is ionized by the light emitted from the stars. 
 								Also, the starlight holds information on the history of star formation of the galaxy, which is what determines 
-								the content of the gas. <br>
+								the content of the gas.
+								<br>
+								<br>
 
 								<a href="#" class="image featured"><img src="images/dash_spectra_screenshot.png" alt="" /></a>
 								The top-left panel in the figure shows a 2D projection of the starlight (using UMAP), with 1,000 galaxies being represented as scatter points
@@ -172,6 +175,8 @@
 								The top-right panel shows the spectrum of a particular galaxy, and the bottom four panels show some of its emission lines.
 								This galaxy has a blue spectrum (the flux is strongest at shorter wavelengths), and it also has strong emission lines.
 								<br>
+								<br>
+
 								You can checkout an interactive version of this plot at <a href="https://dash-with-umap.onrender.com"
 								style="color: green;" target="_blank">this link</a> (it might take some time to load).
 								By hovering over the points in the scatter plot of the top-left panel, you will find that galaxies
@@ -194,22 +199,23 @@
 								</h2>
 							</header>
 
-							<p>
+							<p align="left">
 								This project aims to improve distance (redshift) estimates of far-away galaxies (up to redshift ~ 2)
 								by leveraging pixel-level information from space-based images. For nearby galaxies, it has been shown that 
 								the shape of the galaxy can improve distance estimates. This should also be true for galaxies that are further away,
 								but high-resolution images from space telescopes are required.
+								<br>
 								<br>
 
 								To test this, we have used contrastive learning (a machine learning method that uses deep neural networks) on Hubble Space Telescope (HST) images
 								in the <a href="https://www.ipac.caltech.edu/project/candels" style="color: green;" target="_blank">CANDELS fields</a>
 								to compress them into a low-dimensional space. In this space, galaxies which have similar shapes (up to rotation) and colors will 
 								be close to each other.
-
 								<a href="#" class="image featured"><img src="images/candels_near_neighbors_example.png" alt="" /></a>
 								In the figure above, we show as an example 1 galaxy (left column) and its 5 nearest neighbors
 								(columns 2-6) in the low-dimensional space. The rows correspond to different HST imaging filters (wavelengths).
 								The neighbors have similar shapes to the original galaxy, and also have similar relative fluxes in the different filters.
+								<br>
 								<br>
 
 								After obtaining a low-dimensional representation, we trained a different neural network to predict distances from it.
