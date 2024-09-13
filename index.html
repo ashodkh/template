@@ -149,7 +149,33 @@
 								</h2>
 							</header>
 
-							<p>More details soon!</p>
+							<p>
+								In this project, we trained a JAX-implemented neural network on 
+								<a href="https://www.desi.lbl.gov/2023/06/13/the-desi-early-data-release-in-now-available/" style="color: blue;" 
+								target="_blank">DESI early data release</a> to predict the strengths of emission lines of galaxies from their stellar continua. 
+								<br>
+
+								Most of the light from galaxies comes from stars, which produce a smooth spectrum,
+								and from gas, which emit a lot of light at specific wavelengths, called emission lines.
+								This project shows that these two sources are strongly correlated. 
+								This is not surprising - the light from stars ionizes the gas, and that is what mainly produces the emission lines. 
+								Also, the starlight holds information on the history of star formation of the galaxy, which is what determines 
+								the content of the gas. <br>
+
+								<a href="#" class="image featured"><img src="images/dash_spectra_screenshot.png" alt="" /></a>
+								The top-left panel in the figure shows a 2D projection of the starlight (with UMAP), and the points (1,000 galaxies)
+								are color-coded with the strength of the strongest emission line, H-alpha. There is a clear trend from weak to strong H-alpha emission.
+								The galaxies with strong H-alpha emission are the ones with the youngest stars (which have blue continua),
+								and the galaxies with weak H-alpha emission are the ones with the oldest stars (which have red continua).
+								The top-right panel shows the spectrum of a particular galaxy, and the bottom four panels show some of its emission lines.
+								This galaxy has a blue spectrum (the flux is strongest at shorter wavelengths), and it also has strong emission lines.
+								<br>
+								You can checkout an interactive version of this plot at <a href="https://dash-with-umap.onrender.com"
+								style="color: blue;" target="_blank">this link</a> (it might take some time to load).
+								By hovering over the points in the scatter plot of the top-left panel, you will find that galaxies
+								with a red spectrum (more flux at longer wavelengths) will have weak emission lines.
+
+							</p>
 
 						</div>
 					</section>
